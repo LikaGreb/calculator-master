@@ -1,0 +1,73 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+h1 {
+  color: #253743;
+  margin-bottom: 20px;
+}
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container {
+  width: 600px;
+  padding: 20px;
+  margin: 0 auto;
+  border-radius: 6px;
+  border: 1px solid #5e8ba8;
+}
+.app__inner {
+  display: grid;
+  gap: 20px;
+  grid-template-rows: auto;
+}
+.result {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #000;
+  padding: 10px 20px;
+  text-align: right;
+}
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.buttons > .fiol_btn {
+  background-color: #c19fbe;
+}
+.buttons > .item:hover {
+  background-color: #ad8fab;
+}
+.numbers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #253743;
+  border-radius: 4px;
+  border: 1px solid #253743;
+  padding: 10px 0;
+  font-weight: bold;
+}
+.item:hover {
+  cursor: pointer;
+}
+.numbers > .item:hover {
+  background-color: #929ba1;
+}
+.item.item-result{
+  background-color: #9fc1a2;
+}
+.red_btn{
+  background-color: #af7777;
+  
+}
+.buttons > .item.item-result:hover{
+  background-color: #8fad91;
+}
+
