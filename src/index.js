@@ -55,13 +55,19 @@ const getResult = (first, second, func) => {
 const reducer = (state = defaultState, action) => {
   switch (action.type) {
     case "NUMB":
-      if (action.payload !== "") {
-        return { ...state, value: action.payload };
-      }
       const data =
         state.value === "0"
           ? action.payload
           : `${state.value}${action.payload}`;
+      if (state.firstValue === state.value && state.func !== "") {
+        state.value = "0";
+        const data1 =
+          state.value === "0"
+            ? action.payload
+            : `${state.value}${action.payload}`;
+        console.log("if", state.value, action.payload);
+        return { ...state, value: data1 };
+      }
       console.log(state.value, action.payload);
       return { ...state, value: data };
 
@@ -75,7 +81,7 @@ const reducer = (state = defaultState, action) => {
         ...state,
         firstValue: state.value,
         func: action.payload,
-        value: state.value,
+        //value: "0",
       };
     case "RESULT":
       const res = getResult(state.firstValue, state.value, state.func);
